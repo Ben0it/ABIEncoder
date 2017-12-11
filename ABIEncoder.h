@@ -20,15 +20,16 @@ enum CountMode
 typedef enum CountMode CountMode_t;
 
 
-class ABIEncoder {
+class ABIEncoder
+{
 	public:
-		ABIEncoder(int pin);
-		ABIEncoder(void) : ABIEncoder(10) {};
-		bool SetCountMode(CountMode_t mode);
-		void Enable(void);
-		void Disable(void);
-		long operator =(const long newEncoderPosition);
-		operator long();
+		ABIEncoder(int pin);							// Constructeur permettant de choisir un SS différent du défaut sur la broche 10
+		ABIEncoder(void) : ABIEncoder(10) {};			// Constructeur utilisant un SS sur la broche 10 par défaut
+		bool SetCountMode(CountMode_t mode);			// Définition du mode de comptage: clock/dir, x1, x2 ou x4
+		void Enable(void);								// Active le comptage
+		void Disable(void);								// Arrête le comptage
+		long operator =(const long newEncoderPosition);	// Définit la nouvelle position du codeur
+		operator long();								// Retourne la position actuelle du codeur
 		
 	protected:
 		long	encoderPosition;
