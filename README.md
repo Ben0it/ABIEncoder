@@ -13,3 +13,4 @@ It only uses the SPI signals from the Arduino:
  - SCK: clock.
  - SS: Slave Select, one per slave to choose from multiple components on the same SPI bus.
 
+You can read more about quadrature encoder signals on <a href="https://en.wikipedia.org/wiki/Rotary_encoder">Wikipedia</a>.
